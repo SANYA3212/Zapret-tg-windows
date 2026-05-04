@@ -1,26 +1,116 @@
-# TG_WINDOWS_Proxy_by_SANYA
+# 🚀 TG Windows Proxy by SANYA
 
-Telegram WS Proxy для Windows с современным темным интерфейсом.
+Локальный SOCKS5 прокси для подключения Telegram через WebSocket.  
+Проект упаковывается в удобный `.exe` и не требует Python у конечного пользователя.
 
-## Запуск
+---
 
-```bash
-# Автоматически
-ЗАПУСК_SANYA.bat
+## 📁 Структура проекта
 
-# Вручную
-cd src
-python -m tg_sanya_proxy
+```
+tg-ws-proxy-android/
+│
+├── src/
+│   └── tg_sanya_proxy/
+│       ├── app.py
+│       ├── __main__.py
+│       └── proxy_backend/
+│           ├── tg_ws_proxy.py
+│           └── tg_ws_proxy_NEW.py
+│
+├── build.bat
+├── requirements.txt
+├── pyproject.toml
+├── TG_WINDOWS_Proxy_by_SANYA.spec
+├── ЗАПУСК_SANYA.bat
+└── README.md
 ```
 
-## Настройка Telegram
+---
 
-1. Telegram Desktop → Настройки → Продвинутые → Тип соединения
-2. Использовать прокси → SOCKS5
-3. Сервер: `127.0.0.1`, Порт: `1080`
-4. Без авторизации
+# ⚙️ Сборка в EXE
 
-## Требования
+## 🔧 Установка зависимостей
 
-- Python 3.8+
-- `pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
+
+## 🧱 Сборка
+
+Просто запусти:
+
+```
+build.bat
+```
+
+Или вручную:
+
+```
+pyinstaller TG_WINDOWS_Proxy_by_SANYA.spec
+```
+
+Файл появится в папке `dist/`
+
+---
+
+# ▶️ Использование EXE
+
+## 📦 Подготовка
+
+- Распакуй архив полностью
+- НЕ запускай из ZIP
+- Путь без русских букв (пример: C:\SanyaProxy)
+
+## 🚀 Запуск
+
+Запусти:
+
+```
+TG_WINDOWS_Proxy_by_SANYA.exe
+```
+
+---
+
+## 🔌 Работа
+
+1. Хост: `127.0.0.1`  
+2. Порт: `1080`  
+
+Нажми:
+```
+Запустить прокси
+```
+
+Статус должен стать **Активен**
+
+Затем:
+```
+Подключить Telegram
+```
+
+---
+
+## 📱 Ручная настройка Telegram
+
+```
+Тип: SOCKS5
+Хост: 127.0.0.1
+Порт: 1080
+Логин: пусто
+Пароль: пусто
+```
+
+---
+
+# ⚠️ Проблемы
+
+**Module not found** → не распаковал архив  
+**Не запускается** → запуск от администратора  
+**Антивирус блокирует** → добавить в исключения  
+
+---
+
+# 👤 Автор
+
+SANYA
