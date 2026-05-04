@@ -14,7 +14,13 @@ import os
 import threading
 import asyncio
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+if getattr(sys, 'frozen', False):
+    # Если запущено как exe, берем путь к временной папке
+    application_path = sys._MEIPASS
+else:
+    application_path = os.path.dirname(os.path.abspath(__file__))
+
+sys.path.insert(0, application_path)
 import proxy_backend.tg_ws_proxy_NEW as backend
 
 
